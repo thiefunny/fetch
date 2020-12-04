@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
-    "sass": "^1.29.0"
+    "sass": "^1.29.0",
+    "three": "^0.123.0"
   },
   "devDependencies": {},
   "scripts": {
