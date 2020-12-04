@@ -2,6 +2,34 @@
 
 // const scene = new THREE.Scene();
 
+// const context = new AudioContext();
+
+// // We can then create our OscillatorNode
+
+// const oscillator = context.createOscillator();
+// oscillator.type = "sine";
+// oscillator.frequency.value = 440;
+
+// const gainNode = context.createGain();
+
+// // Connect everything
+
+// oscillator.connect(gainNode);
+// gainNode.connect(context.destination);
+
+// const duration = 2;
+
+// oscillator.start(0);
+
+// gainNode.gain.linearRampToValueAtTime(0.1, context.currentTime + duration);
+// oscillator.stop(context.currentTime + duration);
+
+
+
+
+
+
+
 
 const GOOGLE_API_KEY = 'AIzaSyB7bKIAvkdmBtJrWh9GgNQkeL-ChFCf58c'
 const GOOGLE_SHEET_ID =`1ierEhD6gcq51HAm433knjnVwey4ZE5DCnu1bW7PRG3E`
@@ -22,20 +50,24 @@ const renderer = new THREE.WebGLRenderer();
 renderer.setSize( window.innerWidth, window.innerHeight );
 document.body.appendChild( renderer.domElement );
 
-const geometry = new THREE.BoxGeometry();
-const material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
+const geometry = new THREE.BoxGeometry(1,2,3);
+const material = new THREE.MeshBasicMaterial( { color: 0x001100 } );
 const cube = new THREE.Mesh( geometry, material );
 scene.add( cube );
 
 camera.position.z = 5;
+camera.position.x = 2;
 
 const animate = function () {
     requestAnimationFrame( animate );
 
-    cube.rotation.x += 0.01;
-    cube.rotation.y += 0.01;
+    cube.rotation.x += 0.004;
+    cube.rotation.y += 0.004;
+    cube.rotation.z += 0.004;
 
     renderer.render( scene, camera );
 };
 
-animate();
+// animate();
+
+renderer.render( scene, camera );
